@@ -19,7 +19,7 @@ The latest version is 7.10 based on [Debian 10 (Buster)](https://www.debian.org/
 ## Versioning
 - 1.x This is an Etch'n'half based distribution, built on a Debian LIVE system.
 - 2.x This is a Debian Lenny based distribution, built on a Debian LIVE system.
-- 3.x This is a Debian Squeeze based distribution, contains a kernel with [Real-Time patch](https://wiki.linuxfoundation.org/realtime/start).
+- 3.x This is a Debian Squeeze based distribution, contains a kernel with [Real-Time patch](https://wiki.linuxfoundation.org/realtime/preempt_rt_versions).
 - 4.x This is a Debian Wheezy based distribution, this version contains an updated version of libportaudio.
 - 5.x This is a Debian Wheezy based distribution, built on a Debian LIVE system with overlay persistence, compiled for kernel rt-amd64 (x86 64 bit with real time PREEMPT_RT patches)
 - 6.x This is a Debian Jessie based distribution, built on a Debian LIVE system with overlay persistence, compiled for kernel rt-amd64 (x86 64 bit with real time PREEMPT_RT patches)
