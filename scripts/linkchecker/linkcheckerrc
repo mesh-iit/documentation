@@ -9,3 +9,5 @@ warnings=0
 
 [filtering]
 checkextern=1
+ignore=
+  https://wiki.linuxfoundation.org/realtime/*
