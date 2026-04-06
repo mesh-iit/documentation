@@ -10,7 +10,7 @@ Then, power on the board and press a key (it is different on each model of the i
 
 ## How to set the max power (TDP) of the processor
 
-Set the TDP to 10000 (10w). See page 65 of the user manual of the board for more details, which you can download from https://www.kontron.com/en/products/come-ckl6/p146491.
+Set the TDP to 10000 (10w). See page 65 of the [user manual](https://www.kontron.com/downloads/datasheets/c/come-compact/come-ckl6_datasheet.pdf) of the board for more details.
 
 ## USB Legacy support
 
