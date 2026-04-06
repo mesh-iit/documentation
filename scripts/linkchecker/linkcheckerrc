@@ -12,3 +12,4 @@ checkextern=1
 ignore=
   https://wiki.linuxfoundation.org/realtime/*
   https://www.chipquik.com/store/*
+  https://clonezilla.org/*
