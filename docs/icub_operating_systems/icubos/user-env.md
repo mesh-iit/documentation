@@ -1,6 +1,12 @@
-# iCub user environment
+# Robot user environment
 
-The main user configured on all iCub Setup machines is usually `icub` (SID: 1000 - GID 1000).
+!!! info
+    This guide applies to both **iCub** and **ergoCub** robots. Throughout this guide, references to `icub` should be replaced with your specific robot name:
+    - For **iCub**: use `icub-head`
+    - For **ergoCub head**: use `ergocub-head`
+    - For **ergoCub torso**: use `ergocub-torso`
+
+The main user configured on all robot Setup machines is usually `icub` (SID: 1000 - GID 1000).
 
 All the environment configurations required for this user are stored in a separate file that is loaded every time a bash session is started.
 

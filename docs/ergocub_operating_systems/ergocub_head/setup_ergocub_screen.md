@@ -8,6 +8,67 @@ When you start the ergoCub head for the first time, the screen will display a de
 
 ---
 
+## Install GNOME Shell Extensions
+
+Before hiding the top bar and removing notifications, you need to install the required GNOME Shell extensions. Follow these steps:
+
+### Download the Extensions
+
+You'll need to download the extensions from the GNOME Shell Extensions website:
+
+1. Visit [https://extensions.gnome.org/](https://extensions.gnome.org/) in your browser
+2. Search for and download the extensions you need (e.g., extensions for hiding the top bar and managing notifications)
+3. Download the `.zip` files to your local machine
+
+### Install Extensions via Manual Installation
+
+If you prefer to install extensions manually from a `.zip` file:
+
+1. Download the extension as a `.zip` file from [extensions.gnome.org](https://extensions.gnome.org)
+
+2. Navigate to the extensions directory:
+    ```bash
+    mkdir -p ~/.local/share/gnome-shell/extensions
+    cd ~/.local/share/gnome-shell/extensions
+    ```
+
+3. Extract the extension to this directory. The folder name must match the extension's UUID (you can find this in the `metadata.json` file inside the zip):
+    ```bash
+    unzip -d extension-name /path/to/extension.zip
+    ```
+    
+4. Find the extension UUID by checking the `metadata.json` file:
+    ```bash
+    cat ~/.local/share/gnome-shell/extensions/extension-name/metadata.json | grep '"uuid"'
+    ```
+
+5. Rename the extension folder if needed to use its UUID as the folder name:
+    ```bash
+    mv extension-name UUID
+    ```
+
+6. Restart GNOME Shell (press `Alt+F2`, type `r`, and press `Enter`) or reboot the system
+
+7. Enable the extension using GNOME Settings or via the command line:
+    ```bash
+    dconf write /org/gnome/shell/disabled-extensions "[]"
+    ```
+
+### Alternative: Install via Web Browser
+
+The easiest method is to install extensions directly from [extensions.gnome.org](https://extensions.gnome.org):
+
+1. Visit the extension page on the website
+2. Click the toggle switch to install
+3. When prompted, confirm the installation
+4. The extension will be automatically installed and integrated into GNOME Shell
+
+For more detailed information, refer to:
+- Official guide: [https://itsfoss.com/gnome-shell-extensions/](https://itsfoss.com/gnome-shell-extensions/)
+- Manual installation guide: [https://www.pragmaticlinux.com/2021/06/manually-install-a-gnome-shell-extension-from-a-zip-file/](https://www.pragmaticlinux.com/2021/06/manually-install-a-gnome-shell-extension-from-a-zip-file/)
+
+---
+
 ## Hide the Ubuntu Bar
 
 This guide is based on these [instructions](https://askubuntu.com/a/1264692). 
