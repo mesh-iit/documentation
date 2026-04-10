@@ -48,7 +48,7 @@ Once you have downloaded locally you need to install the extension on the `ergoc
 
 5. Rename the extension folder if needed to use its UUID as the folder name:
     ```bash
-    mv extension-name UUID
+    mv extension-name <UUID>
     ```
 
 6. Restart GNOME Shell (on X11, press Alt+F2, type r, and press Enter) or log out and back in to apply changes
