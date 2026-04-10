@@ -1,6 +1,6 @@
 # Setup Orin NX for using with FRAMOS-IMX678-C
 
-This guide aims to highlight the correct procedure to configure the setup for using the [`FRAMOS-IMX678`](https://framos.com/products/modules/fsmgo-modules/fsmgo-with-imx678-sensor-and-110-hfov-lens-27361/) cameras with the [`Orin NX`](https://www.nvidia.com/it-it/autonomous-machines/embedded-systems/jetson-orin/) from Nvidia + [`Boson for FRAMOS`](https://connecttech.com/product/boson-for-framos-carrier-board-for-nvidia-jetson-xavier-nx/) carrier from ConnectTech.
+This guide aims to highlight the correct procedure to configure the setup for using the [`FRAMOS-IMX678`](https://framos.com/products/modules/fsmgo-modules/fsmgo-with-imx678-sensor-and-110-hfov-lens-27361/) cameras with the [`Orin NX`](https://www.nvidia.com/en-us/autonomous-machines/embedded-systems/jetson-orin/) from Nvidia + [`Boson for FRAMOS`](https://connecttech.com/product/boson-for-framos-carrier-board-for-nvidia-jetson-orin-nx/) carrier from ConnectTech.
 
 !!! info
 
@@ -66,12 +66,13 @@ After the reboot process:
 
 ### Install FRAMOS drivers
 
-Browsing the [`FRAMOS Github`](https://github.com/framosimaging) organization, it's possible to download and install the [`framos-jetson-drivers`](https://github.com/framosimaging/framos-jetson-drivers/blob/l4t-r36.4.3/README.md) and [`framos-jetson-libsv`](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) by following the detailed procedure in the README.md of the repositories. A further guide is proposed here to help even more in the installation.
 
 !!! important
-    It is fundamental to note that the `framos-jetson-drivers` should be installed only if the BSP version installed is older than `v36.4.4`, since from this version the BSP and SDK already install the necessary module for configuring the camera device. Therefore, the optimal way to proceed in any case is to check if after the installation of the BSP and the configuration of the carrier the camera device is already found by running the command: `ls /dev/video*`. If that is not found, it is necessary to proceed with the installation of `framos-jetson-drivers`.
+    It is fundamental to note that the `framos-jetson-drivers` should be installed only if the BSP version installed is older than `v36.4.4`, since from this version the BSP and SDK already install the necessary module for configuring the camera device. Therefore, the optimal way to proceed in any case is to check if after the installation of the BSP and the configuration of the carrier the camera device is already found by running the command: `ls /dev/video*`. If that is not found, it is necessary to proceed with the installation of `framos-jetson-drivers`, otherwise you can skip the following step.
 
-#### framos-jetson-drivers
+Browsing the [`FRAMOS Github`](https://github.com/framosimaging) organization, it's possible to download and install the [`framos-jetson-drivers`](https://github.com/framosimaging/framos-jetson-drivers/blob/l4t-r36.4.3/README.md) and [`framos-jetson-libsv`](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) by following the detailed procedure in the README.md of the repositories. A further guide is proposed here to help even more in the installation.
+
+#### Installation of framos-jetson-drivers
 
 First of all, it is necessary to follow the [guide](https://github.com/framosimaging/framos-jetson-drivers/wiki/Clone,-Compile-and-Install-on-target-system(Jetson-platform)) to install the source code on the target system, which, in this case, is the Jetson board.
 
@@ -87,7 +88,7 @@ sudo jetson-config-camera-cli.py -n "Framos FPA-A/P22" "Framos IMX678-CAM0-2Lane
     ```
 More information can be found in the README.md of the repository linked above.
 
-#### framos-jetson-libsv
+#### Installation of framos-jetson-libsv
 
 Here the [procedure](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) is easier: after cloning the repository and checkout on to the branch of your Jetpack (if you follow the instruction till this section, it would be `l4t-r36.4.3`), you need to run the follow:
 

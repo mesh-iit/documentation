@@ -10,7 +10,7 @@ When you start the ergoCub head for the first time, the screen will display a de
 
 ## Install GNOME Shell Extensions
 
-Before hiding the top bar and removing notifications, you need to install the required GNOME Shell extensions. Follow these steps:
+In order to hide the top bar and removing notifications, you need to install the required GNOME Shell extensions. Follow these steps:
 
 ### Download the Extensions
 
