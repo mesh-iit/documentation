@@ -231,6 +231,7 @@ nav:
         - ergocub_operating_systems/ergocub_head/index.md
         - Setup ergoCub screen: ergocub_operating_systems/ergocub_head/setup_ergocub_screen.md
       - ergocub-torso:
+        - ergocub_operating_systems/ergocub_torso/index.md
         - Installation from scratch: ergocub_operating_systems/ergocub_torso/install_from_scratch.md
     - The OS for the iCub environment:
       - icub_operating_systems/index.md
