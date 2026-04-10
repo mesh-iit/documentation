@@ -6,7 +6,7 @@
     - For **iCub**: use `icub` 
     - For **ergoCub**: use `ergocub`
 
-The main user configured on all robot Setup machines is usually `icub` (SID: 1000 - GID 1000), however it can be changed with `ergocub` as stated above (the SID and GID are tipically the same).
+The main user configured on all robot Setup machines is usually icub (SID: 1000 - GID 1000), however it can be changed with ergocub as stated above (the SID and GID are typically the same).
 
 All the environment configurations required for this user are stored in a separate file that is loaded every time a bash session is started.
 
