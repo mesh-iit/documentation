@@ -51,7 +51,7 @@ If you prefer to install extensions manually from a `.zip` file:
 
 7. Enable the extension using GNOME Settings or via the command line:
     ```bash
-    dconf write /org/gnome/shell/disabled-extensions "[]"
+    gnome-extensions enable UUID
     ```
 
 ### Alternative: Install via Web Browser

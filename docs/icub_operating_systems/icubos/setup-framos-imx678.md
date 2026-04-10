@@ -66,7 +66,7 @@ After the reboot process:
 
 ### Install FRAMOS drivers
 
-Browsing the [`FRAMOS Github`](https://github.com/framosimaging) organization, it's possibile to download and install the [`framos-jetson-drivers`](https://github.com/framosimaging/framos-jetson-drivers/blob/l4t-r36.4.3/README.md) and [`framos-jetson-libsv`](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) by following the detailed procedure in the README.md of the repositories. A further guide is proposed here to help even more in the installation.
+Browsing the [`FRAMOS Github`](https://github.com/framosimaging) organization, it's possible to download and install the [`framos-jetson-drivers`](https://github.com/framosimaging/framos-jetson-drivers/blob/l4t-r36.4.3/README.md) and [`framos-jetson-libsv`](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) by following the detailed procedure in the README.md of the repositories. A further guide is proposed here to help even more in the installation.
 
 !!! important
     It is fundamental to note that the `framos-jetson-drivers` should be installed only if the BSP version installed is older than `v36.4.4`, since from this version the BSP and SDK already install the necessary module for configuring the camera device. Therefore, the optimal way to proceed in any case is to check if after the installation of the BSP and the configuration of the carrier the camera device is already found by running the command: `ls /dev/video*`. If that is not found, it is necessary to proceed with the installation of `framos-jetson-drivers`.
@@ -78,7 +78,7 @@ First of all, it is necessary to follow the [guide](https://github.com/framosima
 After that, you need to configure the sensor: to be more flexible, it is recommended to follow the [command line procedure](https://github.com/framosimaging/framos-jetson-drivers/wiki/Command-line-version) rather than the interactive one. For a configuration consisting of 2 FRAMOS IMX678 sensors, it is necessary to run the following command:
 
 ```
- sudo jetson-config-camera-cli.py -n "Framos FPA-A/P22" "Framos IMX662-CAM0-2Lane" "Framos IMX678-CAM1-2Lane"
+sudo jetson-config-camera-cli.py -n "Framos FPA-A/P22" "Framos IMX678-CAM0-2Lane" "Framos IMX678-CAM1-2Lane"
 ```
 !!! note
     The exact name of the FPA can be checked by running the command with only the -l option

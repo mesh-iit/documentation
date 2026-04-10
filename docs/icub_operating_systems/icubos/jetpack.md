@@ -56,7 +56,7 @@ If you need to install an new JetPack image from scratch please follow the follo
       - Target operating system: *Linux Jetpack `jetpack_ver`*.
    2. Check that everything is selected and continue (Nvidia Jetpack and Carrier BSP must be aligned - check on Carrier Release Notes)
    3. The SDKManager will ask the user password to download all the components and it will install them into a local folder on the host (~12Gb of free space required); remember: this is the password of the local Ubuntu host, not the Jetson one.
-   4. After the installation, the SDK Manager will be ready to flash the OS image on the Nvidia board; **Do not preceed further!** Press SKIP to abort the operation and quit from the SDK Manager
+   4. After the installation, the SDK Manager will be ready to flash the OS image on the Nvidia board; **Do not proceed further!** Press SKIP to abort the operation and quit from the SDK Manager
 3. Download the ConnectTech board support package from the [official website](https://connecttech.com/products/): under Downloads click on the BSP you need, it will be downloaded as `.tgz` archive.
 4. At this point the `SDKManager` should have created a folder tree in `~/nvidia` containing all the files needed for the flash. Copy the `.tgz` package downloaded from ConnectTech website into `~/nvidia/nvidia_sdk/JetPack_<jetpack_ver>_Linux_<board_type>/Linux_for_Tegra/`
 5. Extract the BSP: `tar -xzf CTI-<*>.tgz`
@@ -79,8 +79,8 @@ Now the board is in programming mode.
 
 With a **Nvidia Jetson Xavier NX**, instead, keep the button RST/RECOVERY pressed for several seconds and then, when released, the board will be in recovery mode.
 
-With the **Nvidia Jetson Orin NX**, the procedure is quite the same. The recovery mode could be achieved by pressing the Force Recovery and the Reset buttons simultaneously, then release the reset and, after ~2 sec, release the FR button too. The fan should starts.
-Force Recovery and Reset buttons can be find in the TOP side of the Carrier as highlighted in the image below:
+With the **Nvidia Jetson Orin NX**, the procedure is quite the same. The recovery mode could be achieved by pressing the Force Recovery and the Reset buttons simultaneously, then release the reset and, after ~2 sec, release the FR button too. The fan should start.
+Force Recovery and Reset buttons can be found in the TOP side of the Carrier as highlighted in the image below:
 
 ![](../img/reset-buttons.png "Nvidia Jetson Orin NX Carrier Reset Buttons")
 
