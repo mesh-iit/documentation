@@ -17,16 +17,20 @@ In order to hide the top bar and remove notifications, you need to install the r
 You'll need to download the extensions from the GNOME Shell Extensions website:
 
 1. Visit [https://extensions.gnome.org/](https://extensions.gnome.org/) in your browser
-2. Search for and download the extensions you need (e.g., extensions for hiding the top bar and managing notifications)
-3. Download the `.zip` files to your local machine
+2. Search for and download the extensions you need (e.g., extensions for hiding the top bar and managing notifications). Currently it is used to install the 2 following extensions:
 
-### Install Extensions via Manual Installation
+    - https://extensions.gnome.org/extension/545/hide-top-bar/
+    - https://extensions.gnome.org/extension/4099/no-overview/
+ 
+3. Download the `.zip` files to your local machine. It is important to select the exact version depending on your gnome shell version (check the table on the bottom of the download page)
 
-If you prefer to install extensions manually from a `.zip` file:
+### Install Extensions on ergocub-head machine
 
-1. Download the extension as a `.zip` file from [extensions.gnome.org](https://extensions.gnome.org)
+Once you have downloaded locally you need to install the extension on the `ergocub-head` machine
 
-2. Navigate to the extensions directory:
+1. Copy using the `scp` command the `.zip` file in the `ergocub-head` filesystem (e.g in the `home` dir or in temporary directory)
+
+2. Navigate to the extensions directory (if it is not present you can just create it):
     ```bash
     mkdir -p ~/.local/share/gnome-shell/extensions
     cd ~/.local/share/gnome-shell/extensions
