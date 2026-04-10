@@ -70,7 +70,7 @@ After the reboot process:
 !!! important
     It is fundamental to note that the `framos-jetson-drivers` should be installed only if the BSP version installed is older than `v36.4.4`, since from this version the BSP and SDK already install the necessary module for configuring the camera device. Therefore, the optimal way to proceed in any case is to check if after the installation of the BSP and the configuration of the carrier the camera device is already found by running the command: `ls /dev/video*`. If that is not found, it is necessary to proceed with the installation of `framos-jetson-drivers`, otherwise you can skip the following step.
 
-Browsing the [FRAMOS Github](https://github.com/framosimaging) organization, it's possible to download and install the [framos-jetson-drivers](https://github.com/framosimaging/framos-jetson-drivers/blob/l4t-r36.4.4/README.md) and [framos-jetson-libsv](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) by following the detailed procedure in the README.md of the repositories. A further guide is proposed here to help even more in the installation.
+Browsing the [`FRAMOS Github`](https://github.com/framosimaging) organization, it's possible to download and install the [`framos-jetson-drivers`](https://github.com/framosimaging/framos-jetson-drivers/blob/l4t-r36.4.4/README.md) and [`framos-jetson-libsv`](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) by following the detailed procedure in the README.md of the repositories. A further guide is proposed here to help even more in the installation.
 
 #### Installation of framos-jetson-drivers
 
