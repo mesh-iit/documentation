@@ -55,7 +55,7 @@ Once you have downloaded locally you need to install the extension on the `ergoc
 
 7. Enable the extension using GNOME Settings or via the command line:
     ```bash
-    gnome-extensions enable UUID
+    gnome-extensions enable <UUID>
     ```
 
 ### Alternative: Install via Web Browser
