@@ -90,7 +90,7 @@ More information can be found in the README.md of the repository linked above.
 
 #### Installation of framos-jetson-libsv
 
-Here the [procedure](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) is easier: after cloning the repository and checkout on to the branch of your Jetpack (if you follow the instruction till this section, it would be l4t-r36.4.4), you need to run the following:
+Here the [procedure](https://github.com/framosimaging/framos-jetson-libsv/wiki/Clone,-Install-and-Run-on-target-system(Jetson-platform)) is easier: after cloning the repository and checkout on to the branch of your Jetpack (if you follow the instruction till this section, it would be `l4t-r36.4.4`), you need to run the following:
 
 ```
 cd ~/framos-jetson-libsv/bin
