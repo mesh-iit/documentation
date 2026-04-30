@@ -17,8 +17,6 @@
 |              |        | l_pinkie_prox | ROT  | l_hand_palm     | l_hand_pinkie_1 | 5.71°          | 98°            |            |            | P1 in fig. |
 |              |        | l_pinkie_dist | ROT  | l_hand_pinkie_1 | l_hand_pinkie_2 | 2.78°          | 101.78°        |            |            | P2 in fig. |
 
-[//]: # (Same scheme as Mk5.1.)
-
 <p align="center">
   <img  src=    "../img/hand-mk5.1-joints.png"
         title=  "hand-mk5.1-joints.png"
@@ -46,8 +44,6 @@
 |              |        | l_ring_dist   | ROT  | l_hand_ring_1   | l_hand_ring_2   | 0°             | 88.82°         |            |            | R2 in fig. |
 |              |        | l_pinkie_prox | ROT  | l_hand_palm     | l_hand_pinkie_1 | 5.71°          | 90°            |            |            | P1 in fig. |
 |              |        | l_pinkie_dist | ROT  | l_hand_pinkie_1 | l_hand_pinkie_2 | 2.78°          | 92.10°         |            |            | P2 in fig. |
-
-[//]: # (Same scheme as Mk5.1.)
 
 <p align="center">
   <img  src=    "../img/hand-mk5.1-joints.png"
