@@ -101,6 +101,16 @@ markdown_extensions:
   - pymdownx.tasklist
   - pymdownx.tilde
 
+validation:
+  unresolved_references: false
+  unresolved_footnotes: true
+  unused_definitions: true
+  unused_footnotes: true
+  shadowed_definitions: true
+  shadowed_footnotes: true
+  invalid_links: true
+  invalid_link_anchors: true
+
 not_in_nav: |
   /sw_versioning_table/[0-9]*.md
 
