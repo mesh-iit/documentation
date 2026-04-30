@@ -79,8 +79,6 @@ Since the **IMU** is not equipped with similar configurable address pins, we nee
 
 The complete configuration set is as follows:
 
-
-
 #### ergoCub SN000
 
 !!! note 
@@ -109,12 +107,10 @@ These robots are equipped with the MMA rev. B **IITCODE 16872.B**
 
 No customization of the boards is needed. They are purchased with the correct jumper configuration.
 
-
 I2C dataline is decided at the MMA level through the connector assignment. 
 To enable the use of **PIN 7** in the connector as an additional I2C line (SDA_4), 
 - the **MTB4** needs a **firmware version greater than 1.24**;
 - the **MTB4C** needs a **firmware version greater than 2.3**. 
-
 
 ### Mounting the 3DMID 
 
