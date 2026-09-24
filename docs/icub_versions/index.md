@@ -18,7 +18,7 @@
 | v2.7   | v2.6 with high-performance IMU on the waist | |
 | v2.8   | v2.7 with beam-splitter in the eye for hosting event driven and frame based sensors | |
 | v2.9   | _obsolete_ | |   
-| v2.10  | v2.7 with the 4K FRAMOS-IMX678 cameras, NVidia Orin NX [(UKIT009)](../upgrade_kits/head_4k/support.md) and intel i7 11th on com express type 10 module in the backpack | |   
+| v2.10  | v2.7 with the 4K FRAMOS-IMX678 cameras, [neck Mk3](../necks/neck_mk3.md), NVidia Orin NX in the head ([UKIT009](../upgrade_kits/head_4k/support.md)) and intel i7 11th on com express type 10 module in the backpack ([UKIT010](../upgrade_kits/backpack/support.md))| |   
 
 |Special Version |	Features | Notes |
 | :---:| :---| :---|

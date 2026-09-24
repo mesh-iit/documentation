@@ -177,6 +177,9 @@ nav:
           - iCub FW Kinematics Head: icub_kinematics/icub-forward-kinematics/icub-forward-kinematics-head.md
           - iCub FW Kinematics Legs: icub_kinematics/icub-forward-kinematics/icub-forward-kinematics-legs.md
           - iCub FW Kinematics IMU: icub_kinematics/icub-forward-kinematics/icub-forward-kinematics-imu.md
+    - iCub 2.10:
+      - Overview: icub2_10/index.md
+      - Network architecture: icub2_10/networking.md
     - iCub 3:
       - iCub 3 Joints Specs: icub3/icub3-joints.md
     - ergoCub 1:

@@ -27,6 +27,9 @@ Here's reported info about CPU boards installed on iCub.
 ## [iCub Kinematics](./icub_kinematics/index.md)
 Here you can find informations about iCub's kinematics.
 
+## [iCub 2.10](./icub2_10/index.md)
+Here you can find the specifics for iCub v2.10.
+
 ## [iCub 3](./icub3/icub3-joints.md)
 Here are described the elctrical and mechanical specifications for each joint.
 
