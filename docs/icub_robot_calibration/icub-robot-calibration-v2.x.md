@@ -485,7 +485,11 @@ Do all steps above again for the other camera, changing the `--d 0` parameter to
 
 
 ### Calibrating cameras
-Now you need to ensure that the 2 cameras are perfectly aligned with each other. In order to do this, show a black cross to the robot at a specific distance (see pictures below) and adjust the cameras until reaching the correct alignment.
+The current calibration workflow uses `stereoCalib` to estimate the intrinsic parameters of both cameras and their relative pose. It supports the `pinhole` and `fisheye` camera models. Select the model that matches the camera optics in the configuration file before starting the acquisition.
+
+For a pinhole camera use the standard OpenCV model. Its distortion parameters are `k1`, `k2`, `p1`, and `p2`. For a fisheye camera use the OpenCV fisheye model. Its distortion parameters are `k1`, `k2`, `k3`, and `k4`.
+
+Now you need to ensure that the 2 cameras are perfectly aligned with each other. In order to do this, show a chessboard to the robot at a specific distance (see pictures below) and adjust the cameras until reaching the correct alignment.
 
 ![cam-3](./img/cameras-calib-3.png)
 
@@ -493,7 +497,7 @@ Now you need to ensure that the 2 cameras are perfectly aligned with each other.
 
 - Run `yarprobotinterface` and wait for robot calibration.
 
-- Run `yarpmanager`, open `Cameras` entity then run the 2 `yarpdev` modules and connect.
+- Run `yarpmanager`, open `Cameras` entity then run the 2 `yarpdev` or `yarprobotinterface` modules (it depends on the camera type) and connect.
 
 - Open and run ONLY the 2 yarpview modules and connect.
 
@@ -504,36 +508,64 @@ $ stereoCalib --from icubEyes.ini
 
 ```
 
-!!!warning
-    DO NOT open the `StereoCalibration` app directly from yarpmanager otherwise you will not be able to see the result of the calibration process.
+The configuration file must contain a `[STEREO_CALIBRATION_CONFIGURATION]` group. The following is a minimal example:
 
-- Then type:
+```ini
+[STEREO_CALIBRATION_CONFIGURATION]
+boardWidth 8
+boardHeight 6
+boardSize 0.09241
+numberOfPairs 30
+cameraModel pinhole
+calibrationMode StereoFull
+syncToleranceMs 20
+syncQueueSize 5
+minCaptureIntervalSeconds 2
+minimumBoardSpanRatio 0.15
+```
+
+`boardWidth` and `boardHeight` are the numbers of inner corners in the chessboard. `boardSize` is the side length of one square in meters. At least 30 valid synchronized pairs are required. Set `cameraModel` to `fisheye` for fisheye calibration. The available calibration modes are `StereoFull`, `MonocularLeft`, `MonocularRight`, and `MonocularBoth`; use `StereoFull` for the normal two-camera procedure.
+
+!!!warning
+    DO NOT run the `stereoCalib` module directly from yarpmanager otherwise you will not be able to see the result of the calibration process.
+
+- Then, open another terminal and type:
 
 ```xml
 $ yarp rpc /stereoCalib/cmd
 ```
 
-hen type “start”, a message “Starting Calibration…” will appear.
+Then type `start`. The module reports the collection state and accepts `status`, `stop`, and `help` commands.
 
-Now show the chess to the robot taking care to move it with a different inclination for each acquisition (30 in total). Stay still and just move the chessboard around. The chess needs to fit all the screen and be in landscape view. The system only acquire data if the colored lines appear over the chessboard.
+Now, show the chess to the robot taking care to move it with a different inclination for each acquisition (30 in total). Stay still and just move the chessboard around. The chess needs to fit all the screen and be in landscape view. The system only acquire data if the colored lines appear over the chessboard.
 
-In the terminal of the stereoCalib you should see:
+In the terminal of the stereoCalib, you should see messages for the number of synchronized pairs, the accepted observations, and the reprojection errors. The module writes the result automatically to `outputCalib.ini` in its context. **Do not edit the file while calibration is running**.
 
-```xml 
-  Running Left Camera Calibration... 
-  RMS error reported by calibrateCamera: 0.592978  
-  Running Right Camera Calibration... 
-  RMS error reported by calibrateCamera: 0.147403
-  30 pairs have been successfully detected.
-  Running stereo calibration ...
-  done with RMS error= 0.717102
-  average reprojection err = 0.958607
-  Saving Calibration Results... 
-  ```
+For a pinhole calibration, the generated camera groups have this form:
 
-!!!info
-    To get good parameters you should see errors below 1.
+```ini
+[CAMERA_CALIBRATION_LEFT]
+projection pinhole
+w 640
+h 480
+fx  ...
+fy  ...
+cx  ...
+cy  ...
+k1  ...
+k2  ...
+p1  ...
+p2  ...
 
-❗ After calibration, you need to MANUALLY copy the calibration data inside the file iCubEyes.ini
+[CAMERA_CALIBRATION_RIGHT]
+projection pinhole
+...
+```
+
+For a fisheye calibration, use the same file and replace `projection pinhole` with `projection fisheye`. The distortion entries are then `k1`, `k2`, `k3`, and `k4` instead of `k1`, `k2`, `p1`, and `p2`.
+
+The file also contains a `[STEREO_DISPARITY]` group with `HN`, `R`, and `T`. `HN` is the homogeneous transform from the left camera to the right camera; `R` and `T` are its rotation and translation. The `[CALIBRATION_QUALITY]` group records the monocular and stereo RMS errors, baseline, synchronized pairs, accepted observations, rejected detections, and timestamp statistics. For a good calibration, the reprojection errors should normally be below 1 pixel.
+
+After checking the result, copy `[CAMERA_CALIBRATION_LEFT]`, `[CAMERA_CALIBRATION_RIGHT]` and the `HN` matrix to the camera configuration file used by the robot, for example `icubEyes.ini`.
 
 📚 For additional info look [here](./icub-stereo-calib.md).
